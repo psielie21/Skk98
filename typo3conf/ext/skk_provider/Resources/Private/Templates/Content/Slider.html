@@ -1,0 +1,31 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="slider" options="{group: 'SKK Spezialanfertigung'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_slider.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+      <flux:field.inline.fal name="settings.images" allowedExtensions="jpg,jpeg,gif,png" multiple="true" required="1" maxItems="4" minItems="1" label="Bilder"/>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<strong>Slider</strong>
+	</f:section>
+
+	<f:section name="Main">
+		<div class="slider-holder">
+  		<div class="carusel">
+    		<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
+      		<div class="slide fade">
+        		<f:image treatIdAsReference="1" src="{image.id}" title="{image.title}" alt="{image.alternative}" crop="{image.crop}" class="img-responsive"/>
+      		</div>
+    		</f:for>
+  		</div>
+  	<a class="left-button" onclick="plusSlides(-1)">❮</a>
+  	<a class="right-button" onclick="plusSlides(1)">❯</a>
+		</div>
+	</f:section>

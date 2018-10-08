@@ -1,0 +1,49 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="bloggroup" options="{group: 'Mannschaften'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_bloggroup.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+      <flux:field.relation
+            name="articles"
+            label="Gruppe von Blog Einträgen"
+            multiple="true"
+            size="6"
+            condition="AND doktype = '254' "
+            table="pages"
+            minItems="1"
+            maxItems="1"
+            />
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<strong>Bloggruppe</strong><br />
+	</f:section>
+
+	<f:section name="Main">
+
+    <div class="blog-container" id="blog-container">
+			<v:page.menu pageUid="{articles}">
+				<f:for each="{menu}" as="item" reverse="1" iteration="iterator">
+					<f:if condition="{iterator.index} < 5">
+						{v:content.get(pageUid: "{item.uid}", column: "0") -> v:variable.set(name: 'content')}
+						<flux:form.data table="tt_content" field="pi_flexform" uid="{content.0.uid}" as="flexformData">
+							<div class="blog">
+								<f:image treatIdAsReference="1" src="{flexformData.settings.image}" class="img-responsive"/><br/>
+								<h2>{flexformData.settings.title}</h2>
+								<p class="collapsed">
+									{flexformData.settings.text}
+								</p><f:link.typolink parameter="{item.uid}">Mehr...</f:link.typolink>
+							</div>
+						</flux:form.data>
+					</f:if>
+				</f:for>
+			</v:page.menu>
+  	</div>
+	</f:section>
+</div>

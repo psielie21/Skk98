@@ -1,0 +1,31 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="gallery" options="{group: 'SKK Spezialanfertigung'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_gallery.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+      <flux:field.input name="settings.folder" required="true" label="Kategorie"/>
+			<flux:field.inline.fal name="settings.gallery_images" allowedExtensions="jpg,jpeg,gif,png" multiple="true" required="1" maxItems="512" minItems="1" label="Bilder"/>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<!-- If you wish, place custom backend preview content here -->
+		<strong>Ordner: {settings.folder}</strong><br />
+		Bilder: {settings.gallery_images}
+	</f:section>
+
+	<f:section name="Main">
+  <f:for each="{v:content.resources.fal(field: 'settings.gallery_images')}" as="image">
+    <div class="small {settings.folder}">
+      <a href="{image.url}" data-lightbox="{settings.folder}">
+        <f:image treatIdAsReference="1" src="{image.id}" title="{image.title}" alt="{image.alternative}" crop="{image.crop}"/>
+      </a>
+    </div>
+  </f:for>
+	</f:section>
+</div>

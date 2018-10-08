@@ -1,0 +1,83 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="newslist" options="{group: 'SKK Spezialanfertigung'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_newslist.xlf" >
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+			<flux:field.input name="settings.maxInput" label="Maximale Anzahl der Neuigkeiten (nur bei Startseite)"/>
+			<flux:field.select name="settings.position"
+                    items="{
+                           0:{0:'Startseite',1:'landingpage'},
+                           1:{0:'Presse',1:'press'}
+                           }"
+										 label="Ausgabeseite"
+                   />
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<!-- If you wish, place custom backend preview content here -->
+		<strong>Liste der Neuigkeiten</strong><br>
+		<f:if condition="{settings.position} == 'landingpage'">Maximale Items: {settings.maxInput}</f:if>
+	</f:section>
+
+	<f:section name="Main">
+		<f:if condition="{settings.position} == 'landingpage'">
+		  <f:then>
+				<h2 class="text-center">Neuigkeiten</h2>
+				<div class="text-container">
+					<v:page.menu pageUid="13">
+						<f:if condition="{settings.maxInput}">
+							<f:then>
+								<f:for each="{menu}" as="item" reverse="1" iteration="iterator">
+									<f:if condition="{iterator.index} < {settings.maxInput}">
+										{v:content.get(pageUid: "{item.uid}", column: "0") -> v:variable.set(name: 'content')}
+										<flux:form.data table="tt_content" field="pi_flexform" uid="{content.0.uid}" as="flexformData">
+											<div class="news-content">
+												<h3><f:link.typolink parameter="{item.uid}">{flexformData.settings.title}</f:link.typolink></h3>
+												<h5><f:format.date>{flexformData.settings.date}</f:format.date></h5>
+											</div>
+										</flux:form.data>
+									</f:if>
+								</f:for>
+							</f:then>
+							<f:else>
+								<f:for each="{menu}" as="item" reverse="1" >
+									{v:content.get(pageUid: "{item.uid}", column: "0") -> v:variable.set(name: 'content')}
+									<flux:form.data table="tt_content" field="pi_flexform" uid="{content.0.uid}" as="flexformData">
+										<div class="news-content">
+											<h3><f:link.typolink parameter="{item.uid}">{flexformData.settings.title}</f:link.typolink></h3>
+											<h5><f:format.date>{flexformData.settings.date}</f:format.date></h5>
+										</div>
+									</flux:form.data>
+								</f:for>
+							</f:else>
+						</f:if>
+					</v:page.menu>
+				</div>
+		  </f:then>
+		  <f:else>
+				<div class="table" style="text-align:center;margin-top: 30px">
+					<table>
+						<caption><h3>Neuigkeiten</h3></caption>
+						<v:page.menu pageUid="13">
+							<f:for each="{menu}" as="item" reverse="1">
+								{v:content.get(pageUid: "{item.uid}", column: "0") -> v:variable.set(name: 'content')}
+								<flux:form.data table="tt_content" field="pi_flexform" uid="{content.0.uid}" as="flexformData">
+									<tr>
+										<td><f:format.date>{flexformData.settings.date}</f:format.date></td>
+										<td><f:link.typolink parameter="{item.uid}">{flexformData.settings.title}</f:link.typolink></td>
+									</tr>
+								</flux:form.data>
+							</f:for>
+						</v:page.menu>
+					</table>
+				</div>
+		  </f:else>
+		</f:if>
+	</f:section>
+</div>

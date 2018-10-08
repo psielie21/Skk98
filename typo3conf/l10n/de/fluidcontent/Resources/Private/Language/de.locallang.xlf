@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="fluidcontent" date="2014-04-17T12:20:00+01:00" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="default" approved="yes">
+				<source>default</source>
+			<target state="translated">Standardeinstellung</target><alt-trans xml:space="preserve" origin="cpascher"><target>Standard</target></alt-trans></trans-unit>
+			<trans-unit id="be_groups.tx_fluidcontent_allowedfluidcontent" approved="yes">
+				<source>Allowed fluidcontent types</source>
+			<target state="translated">Erlaubte Fluid-Content-Typen</target></trans-unit>
+			<trans-unit id="be_groups.tx_fluidcontent_deniedfluidcontent" approved="yes">
+				<source>Denied fluidcontent types</source>
+			<target state="translated">Verbotene Fluid-Content-Typen</target></trans-unit>
+			<trans-unit id="pages.no_content_types" approved="yes">
+				<source>No available content types</source>
+			<target state="translated">Keine Inhaltstypen verfügbar</target></trans-unit>
+			<trans-unit id="pages.tab.configuration" approved="yes">
+				<source>Configuration</source>
+			<target state="translated">Konfiguration</target></trans-unit>
+			<trans-unit id="pages.tab.content_settings" approved="yes">
+				<source>Content settings</source>
+			<target state="translated">Inhaltseinstellungen</target></trans-unit>
+			<trans-unit id="pages.tab.element_type" approved="yes">
+				<source>Element type</source>
+			<target state="translated">Elementtyp</target></trans-unit>
+			<trans-unit id="tt_content.pi_flexform" approved="yes">
+				<source>Element Configuration</source>
+			<target state="translated">Elementkonfiguration</target></trans-unit>
+			<trans-unit id="tt_content.tx_fed_fcecontentarea" approved="yes">
+				<source>Content area</source>
+			<target state="translated">Inhaltsbereich</target></trans-unit>
+			<trans-unit id="tt_content.tx_fed_fcefile" approved="yes">
+				<source>Fluid Content type</source>
+			<target state="translated">Fluid Content Typ</target></trans-unit>
+			<trans-unit id="tt_content.tx_fed_fcefile.emptyMessage" approved="yes">
+				<source>Fluid Content type not selected - edit this element in the TYPO3 backend to fix this!</source>
+			<target state="translated">Fluid Content Typ nicht ausgewählt - bearbeite das Element im TYPO3 Backend um das Problem zu beheben!</target></trans-unit>
+			<trans-unit id="tt_content.tx_fed_fcefile.emptyMessageinBackend" approved="yes">
+				<source>Fluid Content type not selected - edit this element to fix this!</source>
+			<target state="translated">Fluid-Content-Typ nicht ausgewählt - bearbeiten sie das Element um dies zu beheben!</target><alt-trans xml:space="preserve" origin="cpascher"><target>Fluid-Content-Typ nicht ausgewählt - bearbeite das Element um dies zu beheben!</target></alt-trans></trans-unit>
+		</body>
+	</file>
+</xliff>

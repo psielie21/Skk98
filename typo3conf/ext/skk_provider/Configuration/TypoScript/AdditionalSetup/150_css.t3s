@@ -1,0 +1,11 @@
+page.includeCSS {
+  css10 = typo3conf/ext/skk_provider/Resources/Public/Css/styles.css
+  css20 = typo3conf/ext/skk_provider/Resources/Public/Css/content.css
+}
+[PIDinRootline = 5]
+page.includeCSS.css30 = typo3conf/ext/skk_provider/Resources/Public/Css/lightbox.min.css
+[END]
+
+[PIDinRootline = 6]
+page.includeCSS.css40 = typo3conf/ext/skk_provider/Resources/Public/Css/fullcalendar.css
+[END]

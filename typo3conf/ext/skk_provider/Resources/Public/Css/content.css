@@ -1,0 +1,201 @@
+/*** TITLE BAR ***/
+#title-bar {
+  color: white;
+  background: #181b1d;
+}
+
+#title-bar h2 {
+  font-size: 2em;
+  padding: 20px 20px;
+}
+
+
+/*** MANNSCHAFTEN ***/
+#hero-image {
+
+}
+
+#hero-image .img-holder {
+  max-height: 400px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+#hero-image .img-description {
+  width: 60%;
+  margin: auto;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+#hero-image .img-description:last-child {
+    margin-bottom: 10px;
+}
+
+/*** CONTENT ***/
+#content {
+  min-height: 200px;
+}
+
+#content .container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#content main {
+  width: 67%;
+  /*border-right: 2px black solid;*/
+}
+
+#content aside {
+  width: 33%;
+}
+
+
+
+/*** BLOG ***/
+#content .blog-container {
+
+}
+
+#content .blog-container .blog {
+  border-bottom: 4px #181b1d solid;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+#content .blog-container .blog img{
+ max-height: 375px;
+}
+
+#content .blog-container .blog h2{
+  text-align: center;
+  margin: 15px 0px 20px 0px;
+}
+
+#content .blog-container .blog p.collapsed{
+  height: 7.8em;
+  overflow: hidden;
+}
+
+#content .blog-container .blog a{
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #D03A19;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1em;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+
+/*** TABLE ***/
+.table table {
+  border: 2px solid #181b1d;
+  border-collapse: collapse;
+  text-align: center;
+  margin: auto;
+}
+
+.table table caption h3{
+  background: #181b1d;
+  color: white;
+  padding: 10px 0px;
+}
+
+.table table tr.home{
+  background: #D03A19;
+}
+
+.table table td{
+  border: 2px solid #181b1d;
+  border-collapse: collapse;
+  padding: 7px 10px;
+}
+
+.table table td.active{
+  background: #D03A19;
+}
+
+.table table td a {
+  color: black;
+  text-decoration: none;
+}
+
+.table table td.active a {
+  color: white;
+  text-decoration: none;
+}
+
+.ansprechpartner {
+  margin-top: 20px;
+}
+
+/*** ERFOLGE ***/
+
+
+/*** KALENDER ***/
+.text-container #calendar{
+  width: 70%;
+  margin: auto;
+}
+
+@media (max-width: 805px){
+  #content main {
+    width: 100%;
+    /*border-right: 2px black solid;*/
+  }
+
+  #content aside {
+    width: 100%;
+  }
+
+  .text-container #calendar {
+    width: 100%;
+  }
+
+}
+
+
+/*** GALERIE ***/
+.gallery-navigation {
+  margin-bottom: 25px;
+}
+
+.gallery-navigation ul {
+  text-align: center;
+}
+
+.gallery-navigation ul li {
+  display: inline-block;
+  cursor: pointer;
+  padding: 7px 10px;
+  font-size: 1.2em;
+}
+
+.gallery-navigation ul li:hover {
+  color: #D03A19;
+}
+
+.gallery-navigation ul li.active {
+  color: #D03A19;
+  font-weight: bold;
+}
+
+.gallery img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.gallery .big {
+  width: 50%;
+}
+
+
+.gallery .small {
+  width: 25%;
+}

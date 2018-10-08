@@ -1,0 +1,29 @@
+page.includeJS {
+  js20 = typo3conf/ext/skk_provider/Resources/Public/Js/jquery.min.js
+}
+
+page.includeJSFooter {
+  js30 = typo3conf/ext/skk_provider/Resources/Public/Js/config.js
+  js40 = typo3conf/ext/skk_provider/Resources/Public/Js/moment.min.js
+}
+
+[PIDinRootline = 2]
+page.includeJS.js10 = typo3conf/ext/skk_provider/Resources/Public/Js/fbConfig.js
+[END]
+
+
+[PIDinRootline = 5]
+page.includeJSFooter.js50 = typo3conf/ext/skk_provider/Resources/Public/Js/isotop.pkgd.min.js
+page.includeJSFooter.js60 = typo3conf/ext/skk_provider/Resources/Public/Js/imagesLoaded.min.js
+page.includeJSFooter.js70 = typo3conf/ext/skk_provider/Resources/Public/Js/gallery.js
+page.includeJSFooter.js80 = typo3conf/ext/skk_provider/Resources/Public/Js/lightbox.min.js
+[END]
+
+[PIDinRootline = 6]
+page.includeJSFooter.js90 = typo3conf/ext/skk_provider/Resources/Public/Js/fullcalendar.js
+page.includeJSFooter.js100 = typo3conf/ext/skk_provider/Resources/Public/Js/fullcalendar_de.js
+[END]
+
+[PIDinRootline = 7]
+page.includeJSFooter.js110 = typo3conf/ext/skk_provider/Resources/Public/Js/erfolge.js
+[END]

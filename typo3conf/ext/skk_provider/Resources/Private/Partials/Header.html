@@ -1,0 +1,44 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<header>
+  <div class="logo">
+    <f:link.page pageUid="1"><f:image src="EXT:skk_provider/Resources/Public/Images/logo_shortened.jpg" alt="Skk 98 Poing Kegel Logo" class="img-responsive"/></f:link.page>
+  </div>
+
+  <div class="desktop-info">
+    <ul>
+      <li><h4>Trainigszeiten</h4>Di u. Do 15.-22.00 Uhr<br> Freitag 15-18.00 Uhr</li>
+      <li><h4>Adresse</h4>Sportpark Poing - 85586 Poing, Plieningerstr. 24</li>
+      <li><h4>Kontakt</h4>E-Mail: spielbericht@skk98.de </li>
+    </ul>
+  </div>
+
+  <nav role="navigation" >
+    <a href="javascript:void(0);" class="icon" id="bar" onclick="toggleMobile()">
+      <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+    </a>
+    <v:page.menu>
+      <ul class="topnav" id="myTopnav">
+        <f:for each="{menu}" as="item">
+          <f:if condition="{item.hasSubPages}">
+            <f:then>
+              <li>
+                <f:link.page pageUid="{item.uid}" title="{item.linktext}" onclick="event.preventDefault();"><span>{item.linktext}</span></f:link.page>
+                  <v:page.menu pageUid="{item.uid}">
+                    <ul class="dropdown">
+                      <f:for each="{menu}" as="subItem">
+                        <li><f:link.page pageUid="{subItem.uid}" title="{subItem.linktext}"><span>{subItem.linktext}</span></f:link.page></li>
+                      </f:for>
+                    </ul>
+                  </v:page.menu>
+                </li>
+              </f:then>
+              <f:else>
+                  <li><f:link.page pageUid="{item.uid}" title="{item.linktext}"><span>{item.linktext}</span></f:link.page></li>
+              </f:else>
+          </f:if>
+        </f:for>
+      </ul>
+    </v:page.menu>
+    <a href="javascript:void(0);" onclick="activateInfo()"><i>i</i></a>
+  </nav>
+</header>

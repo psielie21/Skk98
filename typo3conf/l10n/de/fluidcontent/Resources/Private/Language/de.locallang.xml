@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+			<label index="default">Standardeinstellung</label>
+			<label index="be_groups.tx_fluidcontent_allowedfluidcontent">Erlaubte Fluid-Content-Typen</label>
+			<label index="be_groups.tx_fluidcontent_deniedfluidcontent">Verbotene Fluid-Content-Typen</label>
+			<label index="pages.no_content_types">Keine Inhaltstypen verfügbar</label>
+			<label index="pages.tab.configuration">Konfiguration</label>
+			<label index="pages.tab.content_settings">Inhaltseinstellungen</label>
+			<label index="pages.tab.element_type">Elementtyp</label>
+			<label index="tt_content.pi_flexform">Elementkonfiguration</label>
+			<label index="tt_content.tx_fed_fcecontentarea">Inhaltsbereich</label>
+			<label index="tt_content.tx_fed_fcefile">Fluid Content Typ</label>
+			<label index="tt_content.tx_fed_fcefile.emptyMessage">Fluid Content Typ nicht ausgewählt - bearbeite das Element im TYPO3 Backend um das Problem zu beheben!</label>
+			<label index="tt_content.tx_fed_fcefile.emptyMessageinBackend">Fluid-Content-Typ nicht ausgewählt - bearbeiten sie das Element um dies zu beheben!</label>
+		</languageKey>
+  </data>
+</T3locallangExt>

@@ -1,0 +1,650 @@
+/*** PRESETS ***/
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background: url("../Images/bowling_background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+a {
+  color: #D03A19;
+}
+li {
+  list-style: none;
+}
+p {
+	  line-height: 1.5;
+}
+
+/*** GLOBAL ***/
+.img-responsive {
+  max-width: 100%;
+   height: auto;
+   display:block
+}
+
+.main-container {
+  width: 1115px;
+  margin: auto;
+  background: #FFF;
+}
+
+.text-container {
+  padding: 20px;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.main-content {
+  width: 75%;
+}
+
+.side-content {
+  width: 25%;
+}
+
+.img-container {
+  width: 33%;
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.85); /* Black background with opacity */
+  z-index: 7; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.text{
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  left: 50%;
+  text-align: center;
+  font-size: 29px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.text:nth-child(2){
+  top: 50%;
+}
+
+.text:nth-child(3){
+  top: 75%;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 5px) ;
+    transform: rotate(-45deg) translate(-8px, 5px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -5px) ;
+    transform: rotate(45deg) translate(-8px, -5px) ;
+}
+
+h1 {
+  font-size: 2.3em;
+  text-align: center;
+}
+
+h1::after {
+  background: none repeat scroll 0 0 #D03A19;
+  bottom: -4px;
+  content: "";
+  display: block;
+  margin: auto;
+  height: 4px;
+  position: relative;
+  margin-bottom: 30px;
+  width: 200px;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.75s;
+  animation-name: fade;
+  animation-duration: 0.75s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/*** HEADER ***/
+header  {
+  position: relative;
+}
+
+header::after{
+  background: none repeat scroll 0 0 #D03A19;
+  content: "";
+  display: block;
+  margin: auto;
+  height: 4px;
+  position: relative;
+  /*https://answers.squarespace.com/questions/100615/create-partial-underline-under-headers-using-css.html*/
+}
+
+header  .logo {
+  display: inline-block;
+  width: 30%;
+  margin-right: 3.5%;
+}
+
+header  .logo a {
+
+}
+
+header  .logo img {
+  width: 100%;
+}
+
+header  .desktop-info {
+  display: inline-block;
+  vertical-align: top;
+}
+
+header  .desktop-info ul{
+  margin-top: 35px;
+}
+
+header  .desktop-info ul li{
+  display: inline-block;
+  width: 200px;
+}
+
+header  .desktop-info ul li h5{
+  text-align: center;
+}
+
+header  nav{
+  display: inline-block;
+  width: 100%;
+  background: #181b1d
+}
+
+header  nav ul{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-left: 10px;
+}
+
+header  nav ul li{
+  display: inline-block;
+  border-bottom: none;
+  border-top: none;
+  position: relative;
+}
+
+header  nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: bold;
+  z-index: 5;
+  padding: 15px 7px;
+  display: block;
+}
+
+header  nav ul li a::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0%;
+  width: 100%;
+  background: #D03A19;
+  -webkit-transition: height .1s linear;
+  -moz-transition: height .1s linear;
+  -o-transition: height .1s linear;
+  -ms-transition: height .1s linear;
+  }
+
+header  nav ul li a:hover::before{
+    height: 100%;
+  }
+
+header  nav ul li a span {
+  position: relative;
+}
+
+header nav ul li.active a {
+  /* background: rgb(208,58,25);
+    gefällt mir einfach nicht :/
+  */
+}
+
+header nav ul li ul.dropdown {
+  display: none;
+  width: 90%;
+  position: absolute;
+  z-index: 5;
+  background: #181b1d;
+  border: 4px #D03A19 solid;
+  border-top: none;
+}
+
+header nav ul li:hover ul.dropdown {
+  display: block;
+  animation: 300ms ease;
+}
+
+header nav ul li ul.dropdown li{
+  display: block;
+}
+
+header nav ul li ul.dropdown li a {
+  text-align: center;
+  z-index: 5;
+}
+
+header nav ul li ul.dropdown li a span {
+  z-index: 6;
+}
+
+header  nav .icon{
+  display: none;
+  padding: 10px 7px;
+  font-size: 2em;
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+header  nav .icon div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 4px;
+  transition: 0.4s;
+}
+
+header  nav .icon div:first-child {
+  margin-top: 11px;
+}
+
+header  nav i {
+  display: none;
+  color: white;
+  float: right;
+  margin: 15px 30px;
+  border: 2px white solid;
+  border-radius: 50%;
+  padding: 6px 13px;
+  font-weight: bold;
+  font-family: serif;
+}
+
+/*** SLIDER ***/
+#slider {
+  /*https://www.w3schools.com/howto/howto_js_slideshow.asp*/
+  margin-bottom: 25px;
+}
+
+.slider-holder {
+  position: relative;
+  max-height: 490px;
+  overflow: hidden;
+}
+
+#slider .slider-holder a, .slider-holder a{
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  width: auto;
+  margin-top: -22px;
+}
+
+.slider-holder a.left-button{
+  left:0px;
+}
+
+.slider-holder a.right-button{
+  right:0px;
+  border-radius: 3px 0 0 3px;
+}
+
+.slider-holder a:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+#slider .slider-holder img{
+
+}
+
+/*** MAIN ***/
+
+#main {
+
+}
+
+#main main{
+
+}
+
+#main aside{
+
+}
+
+#main aside .text-container{
+  border-left: 2px solid #181b1d;
+  border-bottom: 2px solid #181b1d;
+  border-right: 2px solid #181b1d;
+}
+
+#main aside h2 {
+  background: #181b1d;
+  color: white;
+  padding: 10px 0px;
+}
+
+#main aside .news-content {
+  margin-top: 7px;
+}
+
+#main aside .news-content:first-child {
+  margin-top: 0px;
+}
+
+/*** FACEBOOK-ARTICLES ***/
+
+#facebook-articles {
+	margin-bottom: 25px;
+}
+
+#facebook-articles h1{
+
+}
+
+#facebook-articles .row{
+
+}
+
+/*** SPONSORS ***/
+#sponsors {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#sponsors .sponsor-holder{
+
+}
+
+#sponsors .sponsor-holder img{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+#sponsors .sponsor-holder img:hover{
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+/*** FOOTER ***/
+footer {
+  background: #181b1d;
+}
+
+footer ul {
+  text-align: center;
+}
+
+footer ul li {
+  display: inline-block;
+  padding: 13px 10px;
+
+}
+
+footer ul li a{
+  text-decoration: none;
+}
+
+/*** MEDIA-QUERIES ***/
+
+@media (max-width: 1115px) {
+  .main-container {
+    width: 100%;
+  }
+  aside#news {
+    margin-left: 10px;
+  }
+}
+
+/*** IPAD ***/
+@media (max-width: 970px) {
+  /*** HEADER ***/
+  header  nav .icon{
+    display: inline-block;
+  }
+
+  header  nav ul{
+    position: absolute;
+    display: inline-flex;
+    z-index: 5;
+    flex-direction: column;
+    background: #181b1d;
+    width: 40%;
+  }
+
+  header  nav ul.expanded{
+    border: 4px solid #D03A19;
+    transition: 300ms ease;
+  }
+
+  header  nav ul li{
+    display: none;
+  }
+
+  header nav ul li.active {
+    display: inherit;
+  }
+
+  header nav ul li.active a {
+    background: none;
+  }
+
+  header  nav ul.expanded li{
+    display: block;
+    text-align: center;
+  }
+
+  header nav ul li a {
+    padding: 19px 0px 19px 14px;
+  }
+
+
+    /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+    This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/*** VERTICAL IPAD***/
+@media (max-width: 940px){
+  header  .desktop-info {
+    font-size: 0.9em;
+  }
+
+  header  .desktop-info ul li {
+    width: 170px;
+  }
+}
+
+/*** ADJUST MENU ***/
+@media (max-width: 805px){
+  header  .logo {
+    width: 50%;
+    margin: auto;
+    display: block;
+  }
+
+  header  .desktop-info {
+    font-size: 1em;
+  }
+
+  header  .desktop-info ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4px;
+    margin-bottom: 15px;
+  }
+
+  header  .desktop-info ul li {
+    width: 100%;
+    text-align: center;
+    padding: 0px 35px;
+  }
+
+  /*** MAIN ***/
+  .side-content{
+    width: 33%;
+  }
+
+}
+
+/*** ADAPT SPONSOR LOGOS ***/
+@media (max-width: 680px){
+  /*** SPONSORS ***/
+  .img-container{
+    width: 100%;
+    display: block;
+  }
+
+  .img-container img {
+    margin: auto;
+    width: 45%;
+  }
+}
+
+/*** LARGE PHONES / PHONE HORIZONTAL ***/
+@media (max-width: 585px){
+  /*** HEADER ***/
+  header  .logo {
+    width: 75%;
+  }
+  header  .desktop-info ul {
+    display: none;
+  }
+
+  header    nav i {
+    display: block;
+  }
+
+  header    nav ul {
+    width: 60%;
+  }
+
+  /*** MAIN ***/
+  .side-content {
+    width: 50%;
+  }
+
+  /*** SPONSORS ***/
+  .img-container img {
+    width: 60%;
+  }
+}
+
+/*** CENTER NAV ITEM ***/
+@media (max-width: 400px){
+  header  nav ul{
+    width: 50%;
+  }
+
+  header  nav ul li a {
+    text-align: center;
+  }
+}
+
+/*** SMALL PHONES ***/
+@media (max-width: 385px){
+  /*** HEADER ***/
+  header .menu-ro nav i {
+    margin: 15px 15px;
+    margin-top: 20px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    padding: 4px 10px;
+  }
+
+
+  /*** MAIN ***/
+  main aside#news {
+    margin-bottom: 10px;
+  }
+  .side-content{
+    width: 100%;
+  }
+
+  /*** SPONSORS ***/
+  .img-container img {
+    width: 80%;
+  }
+}

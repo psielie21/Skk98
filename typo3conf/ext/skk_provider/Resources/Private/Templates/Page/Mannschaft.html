@@ -1,0 +1,60 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+	<f:layout name="Page" />
+
+	<f:section name="Configuration">
+		<flux:form id="mannschaft" localLanguageFileRelativePath="/Resources/Private/Language/Page/locallang_mannschaft.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
+		</flux:form>
+		<flux:grid>
+			<!-- Edit this grid to change the "backend layout" structure -->
+      <flux:grid.row>
+				<flux:grid.column colPos="0" colspan="3" name="hero_image" label="Mannschaftsfoto"/>
+			</flux:grid.row>
+			<f:comment>
+				<flux:grid.row>
+				<flux:grid.column colPos="5" colspan="3" name="pic_desc" label="Bildunterschriften"/>
+				</flux:grid.row>
+			</f:comment>
+      <flux:grid.row>
+				<flux:grid.column colPos="10" colspan="2" name="blogs" label="Berichte"/>
+        <flux:grid.column colPos="20" colspan="1" name="spielplan" label="Spielplan"/>
+			</flux:grid.row>
+		</flux:grid>
+	</f:section>
+
+	<f:section name="Main">
+    <section id="title-bar">
+      <h2>{page.title}</h2>
+    </section>
+
+    <section id="hero-image">
+      <div class="img-holder">
+        <v:content.render column="0"/>
+      </div>
+			<div class="img-description"></div>
+			<f:comment>
+				<![CDATA[
+					<f:for each="{v:content.get(col: 5)}" as"element">
+						<div class="img-description">{element}</div>
+					</f:for>
+				]]>
+			</f:comment>
+    </section>
+
+    <section id="content">
+      <div class="container">
+        <aside class="text-container pull-right">
+	        <v:content.render column="20" />
+        </aside>
+        <main class="text-container pull-left">
+					<v:content.render column="10" />
+        </main>
+      </div>
+    </section>
+
+	</f:section>
+</div>

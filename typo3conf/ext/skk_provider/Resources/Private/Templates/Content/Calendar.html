@@ -1,0 +1,57 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="calendar" options="{group: 'SKK Spezialanfertigung'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_calendar.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+      <flux:form.section name="settings.date_section" label="Termine">
+        <flux:form.object name="termin" label="Termin">
+            <flux:field.input name="date" eval="date" label="Datum"/>
+            <flux:field.input name="name" label="Name"/>
+        </flux:form.object>
+      </flux:form.section>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<strong>Kalender</strong><br />
+		<f:for each="{settings.date_section}" as="obj">
+			<f:format.date format="Y-m-d">{obj.termin.date}</f:format.date>: {obj.termin.name} <br>
+		</f:for>
+	</f:section>
+
+	<f:section name="Main">
+
+  <script type="text/javascript" defer>
+    events = [
+      <f:for each="{settings.date_section}" as="obj">
+        <![CDATA[  {   ]]>
+          title: "{obj.termin.name}",
+          date: "<f:format.date format="Y-m-d">{obj.termin.date}</f:format.date>"
+      <![CDATA[  },   ]]>
+      </f:for>
+    ]
+
+    <![CDATA[
+      $(document).ready(function() {
+        $('#calendar').fullCalendar({
+          events: events,
+            header : {
+              left: "prev,next",
+              center : "title",
+              right: "month, listMonth"
+            }
+        })
+      });
+    ]]>
+  </script>
+
+
+
+    <div id="calendar"></div>
+	</f:section>
+</div>

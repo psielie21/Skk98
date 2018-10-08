@@ -1,0 +1,33 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="newseintrag" options="{group: 'SKK Spezialanfertigung'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_newseintrag.xlf">
+		<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+		<flux:field.input name="settings.title" required="true" label="Titel"/>
+		<flux:field.inline.fal name="settings.image" allowedExtensions="jpg,jpeg,gif,png" maxItems="1" label="Bild"/>
+		<flux:field.text name="settings.text" enableRichText="true" label="Text"/>
+		<flux:field.input name="settings.date" eval="date" required="true" label="Datum"/>
+		<flux:field.input name="settings.author" label="Autor"/>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<strong>{settings.title}</strong><br>
+	<f:format.date>{settings.date}</f:format.date>
+</f:section>
+
+<f:section name="Main">
+		{v:content.resources.fal(field: 'settings.image') -> v:iterator.first() -> v:variable.set(name: 'image')}
+		<div style="width:50%; margin:auto; margin-bottom: 25px;">
+			<f:image treatIdAsReference="1" src="{image.id}" title="{image.title}" alt="{image.alternative}" class="img-responsive"/>
+		</div>
+		<f:format.html>{settings.text}</f:format.html><br>
+		<i>{settings.author}<br>
+		<f:format.date format="d/m/y">{settings.date}</f:format.date></i>
+</f:section>
+</div>

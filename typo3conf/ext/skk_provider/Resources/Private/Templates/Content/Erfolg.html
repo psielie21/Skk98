@@ -1,0 +1,28 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="erfolg" options="{group: 'SKK Spezialanfertigung'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_erfolg.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+      <flux:field.input name="settings.season" label="Saison" placeholder="Das Endjahr der Saison"/>
+			<flux:field.text name="settings.text" label="Erfolge"/>
+    </flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<!-- If you wish, place custom backend preview content here -->
+		<strong>Saison:</strong><br />
+		{settings.season}
+	</f:section>
+
+	<f:section name="Main">
+    <div class="erfolg-entry" id="Saison{settings.season}">
+      <h1>{settings.season}</h1>
+      <p><f:format.html>{settings.text}</f:format.html></p>
+    </div>
+	</f:section>
+</div>

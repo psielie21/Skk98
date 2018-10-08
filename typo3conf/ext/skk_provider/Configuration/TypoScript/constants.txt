@@ -1,0 +1,5 @@
+plugin.tx_skkprovider.view {
+	templateRootPaths.0 = EXT:skk_provider/Resources/Private/Templates/
+	partialRootPaths.0 = EXT:skk_provider/Resources/Private/Partials/
+	layoutRootPaths.0 = EXT:skk_provider/Resources/Private/Layouts/
+}

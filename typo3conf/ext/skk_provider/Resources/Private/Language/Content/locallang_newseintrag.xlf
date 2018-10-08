@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="skk_provider" date="2018-01-20T11:00:40+01:00">
+		<header/>
+		<body>
+      <trans-unit id="flux.newseintrag">
+				<source>Neuigkeiten Element</source>
+			</trans-unit>
+      <trans-unit id="flux.newseintrag.description">
+				<source>Wie Blog Eintrag der Mannschaften nur als Neuigkeit gespeichert</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

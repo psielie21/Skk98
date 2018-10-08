@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="skk_provider" date="2018-01-20T11:00:40+01:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.landingpage">
+				<source>Startseite</source>
+			</trans-unit>
+			<trans-unit id="flux.landingpage.description">
+				<source>Die Startseite der Domain</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,2 @@
+config.tx_realurl_enable = 1
+config.absRefPrefix = /

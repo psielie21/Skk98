@@ -1,0 +1,59 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="spielplan" options="{group: 'Mannschaften'}" localLanguageFileRelativePath="/Resources/Private/Language/Content/locallang_spielplan.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+      <flux:field.input name="settings.season" label="Saison" />
+      <flux:field.input name="settings.ansprechpartner_name" label="Name des Ansprechpartners" />
+      <flux:field.input name="settings.ansprechpartner_tel" label="Tel. des Ansprechpartners" />
+      <flux:form.section name="settings.date_section" label="Spieltermine">
+        <flux:form.object name="termin" label="Spiel">
+            <flux:field.input name="date" eval="date" label="Datum"/>
+            <flux:field.input name="name" label="Gegner"/>
+            <flux:field.input name="ergebnis" label="Ergebnis" />
+            <flux:field.checkbox name="home" label="Heimspiel" />
+        </flux:form.object>
+      </flux:form.section>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<strong>Spielplan {settings.season}</strong><br />
+	</f:section>
+
+	<f:section name="Main">
+    <div class="table">
+      <table>
+        <caption><h3>Spielplan {settings.season}</h3></caption>
+        <f:for each="{settings.date_section}" as="obj">
+          <tr {f:if(condition: obj.termin.home, then: 'class="home"')}>
+            <td><f:format.date format="d.m.Y">{obj.termin.date}</f:format.date></td>
+            <td>{obj.termin.name}</td>
+            <td>{obj.termin.ergebnis}</td>
+          </tr>
+        </f:for>
+        <tr>
+          <td colspan="3">Alle roten Felder sind Heimspiele</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="ansprechpartner">
+      <div class="table">
+        <table>
+          <caption><h3>Ansprechpartner</h3></caption>
+          <tr>
+            <td>{settings.ansprechpartner_name}</td>
+            <td>{settings.ansprechpartner_tel}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+	</f:section>
+</div>

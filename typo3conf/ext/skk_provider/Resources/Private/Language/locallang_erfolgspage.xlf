@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="skk_provider" date="2018-01-20T11:00:40+01:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.erfolgspage">
+				<source>Erfolgsseite</source>
+			</trans-unit>
+			<trans-unit id="flux.erfolgspage.description">
+				<source>Hier können alle Erfolge aufgelistet werden</source>
+			</trans-unit>
+			<trans-unit id="flux.example.fields.settings.helloWorld">
+				<source>Example input</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

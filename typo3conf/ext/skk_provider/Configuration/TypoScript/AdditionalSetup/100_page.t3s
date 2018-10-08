@@ -1,0 +1,5 @@
+page = PAGE
+page.meta {
+  X-UA-Compatible = IE-Edge
+ viewport = width=device-width, initial-scale=1
+}

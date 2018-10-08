@@ -1,0 +1,89 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+	<f:layout name="Page" />
+
+	<f:section name="Configuration">
+		<flux:form id="landingpage" localLanguageFileRelativePath="/Resources/Private/Language/Page/locallang_landingpage.xlf">
+			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
+		</flux:form>
+		<flux:grid>
+			<!-- Edit this grid to change the "backend layout" structure -->
+			<flux:grid.row>
+				<flux:grid.column colPos="0" colspan="3" name="slider" label="Slider"/>
+			</flux:grid.row>
+      <flux:grid.row>
+				<flux:grid.column colPos="10" colspan="2" name="main_content" label="Hauptinhalt"/>
+        <flux:grid.column colPos="20" colspan="1" name="aside" label="Neuigkeiten"/>
+			</flux:grid.row>
+		</flux:grid>
+	</f:section>
+
+	<f:section name="Main">
+
+    <section id="slider">
+			<v:content.render column="0"/>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <main id="about-us" class="">
+          <div class="text-container">
+            <h1>Herzlich Willkommen</h1>
+            <aside id="news" class="side-content pull-right">
+							<v:content.render column="20"/>
+            </aside>
+            <p><v:content.render column="10" /></p>
+          </div>
+        </main>
+
+      </div>
+
+    </section>
+
+    <section id="facebook-articles" class="clear-both container">
+      <h1>Neues von Facebook</h1>
+      <div class="row" style="text-align: center">
+				<div class="fb-page"
+			     data-href="https://www.facebook.com/skk98poing/"
+			     data-tabs="timeline"
+			     data-small-header="false"
+			     data-adapt-container-width="true"
+			     data-hide-cover="false"
+					 data-width="500"
+			     data-show-facepile="true">
+				  <div class="fb-xfbml-parse-ignore">
+				    <blockquote cite="https://www.facebook.com/facebook">
+				      <a href="https://www.facebook.com/facebook">Facebook</a>
+				    </blockquote>
+				  </div>
+			</div>
+
+      </div>
+    </section>
+
+    <section id="sponsors">
+      <h1>Sponsoren</h1>
+      <div class="sponsor-holder container">
+        <a href="https://schweiger-bier.de/">
+          <div class="img-container">
+						<f:image src="EXT:skk_provider/Resources/Public/Images/logo_schweiger.jpg" alt="Logo von unserem Sponsor Schweiger" class="img-responsive sponsor"/>
+          </div>
+        </a>
+        <a href="http://poinger-einkehr.de/">
+          <div class="img-container">
+            <f:image src="EXT:skk_provider/Resources/Public/Images/logo_poinger_einkehr.jpg" alt="Logo von unserem Sponsor Poinger Einkehr" class="img-responsive sponsor"/>
+          </div>
+        </a>
+        <a href="https://www.kanzlei-schweiger.de/">
+          <div class="img-container">
+            <f:image src="EXT:skk_provider/Resources/Public/Images/logo_steuerberater_schweiger.jpg" alt="Logo von unserem Sponsor Steuerberater Schweiger" class="img-responsive sponsor"/>
+          </div>
+        </a>
+      </div>
+    </section>
+
+	</f:section>
+</div>
